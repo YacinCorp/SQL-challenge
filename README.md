@@ -43,27 +43,36 @@ List the Top 10 Countries by year over year % GDP per capita growth between 2011
     
                 SELECT top 10
                 RANK() OVER (ORDER BY growth_percentage DESC ) AS rank,
-            country_name,
-            country_code,
-            continent_name as continent,
-            growth_percentage,
-            year
-            from(
-            select 
-            countries.country_code,
-            gdp_per_capita,
-            continent_name,
-            country_name,
-            year,
+                 country_name,
+                    country_code,
+                    continent_name as continent,
+                    growth_percentage,
+                    year
+                    from(
+                    select 
+                    countries.country_code,
+                    gdp_per_capita,
+                    continent_name,
+                    country_name,
+                    year,
             
-            round(((gdp_per_capita/(LAG(gdp_per_capita, 1) OVER (ORDER BY per_capita.country_code, year)))-1)*100,4) as growth_percentage
+                    round(((gdp_per_capita/(LAG(gdp_per_capita, 1) OVER (ORDER BY per_capita.country_code, year)))-1)*100,4) as growth_percentage
 
 
-            from per_capita
-                left join countries on countries.country_code = per_capita.country_code
-                left join continent_map on continent_map.country_code = per_capita.country_code
-                left join continents on continents.continent_code = continent_map.continent_code
-                where year in(2011,2012)
-                ) as growth_formula
-                where year = 2012
+                    from per_capita
+                        left join countries on countries.country_code = per_capita.country_code
+                        left join continent_map on continent_map.country_code = per_capita.country_code
+                        left join continents on continents.continent_code = continent_map.continent_code
+                        where year in(2011,2012)
+                        ) as growth_formula
+                        where year = 2012
 
+
+### Question 3:
+
+For the year 2012, compare the percentage share of GDP Per Capita for the following regions: North America (NA), Europe (EU), and the Rest of the World. Your result should look something like:
+North America  | Europe | Rest of the World
+
+North America  | Europe | Rest of the World
+    ------ | ------ | -------------
+    X%  | Y%  | Z%
