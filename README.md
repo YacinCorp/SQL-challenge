@@ -113,3 +113,13 @@ For years 2004 through 2012, calculate the average GDP Per Capita for every cont
 - Year
 - Continent
 - Average GDP Per Capita
+
+`Solution`:
+
+        select 
+        avg(gdp_per_capita) as 'Average GDP Per Capita',continent_name as continent,year
+        from per_capita as capita
+        inner join continent_map as map on map.country_code = capita.country_code
+        inner join continents on continents.continent_code= map.continent_code
+        group by continent_name, year
+        order by year;
