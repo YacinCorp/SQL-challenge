@@ -17,13 +17,13 @@ Alphabetically list all the country codes in the continent map table that appear
     update continent_map set country_code='N/A' where country_code=''
     select * from continent_map
     where country_code in (select country_code
-							from continent_map
-							group by country_code
-							having count(country_code) >1)
+	from continent_map
+	group by country_code
+	having count(country_code) >1)
 
-		order by case
-		when country_code = 'N/A' then '1'
-		else country_code end asc;
+	order by case
+	when country_code = 'N/A' then '1'
+	else country_code end asc;
 
 ### Question 2 :
 
@@ -104,3 +104,12 @@ X%  | Y%  | Z%
         left join continents on continents.continent_code = continent_map.continent_code
         where year = 2012 and continent_name<> 'Europe' and continent_name<> 'North America'
         ) as rest_of_the_world
+
+### Question 4 :
+
+For years 2004 through 2012, calculate the average GDP Per Capita for every continent for every year. The average in this case is defined as the `Sum of GDP Per Capita for All Countries in the Continent / Number of Countries in the Continent`
+
+- The final product should include columns for:
+- Year
+- Continent
+- Average GDP Per Capita
