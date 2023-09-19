@@ -123,3 +123,10 @@ For years 2004 through 2012, calculate the average GDP Per Capita for every cont
         inner join continents on continents.continent_code= map.continent_code
         group by continent_name, year
         order by year;
+
+### Question 5 :
+For years 2004 through 2012, calculate the median GDP Per Capita for every continent for every year. The median in this  case is defined as `The value at which half of the samples for a continent are higher and half are lower`
+The final product should include columns for:
+- Year
+- Continent
+- Median GDP Per Capita
