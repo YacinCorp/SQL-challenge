@@ -10,7 +10,7 @@ There is 4 CSV files to complete this exercice : [CsvFiles](data)
 
 Data Integrity & Cleanup
 
-    Alphabetically list all the country codes in the continent map table that appear more than once. For countries with no country code make them display as "N/A" and display them first in the list.
+Alphabetically list all the country codes in the continent map table that appear more than once. For countries with no country code make them display as "N/A" and display them first in the list.
 
 Solution :
 
