@@ -1,12 +1,10 @@
 # SQL-challenge
-Here is a SQL interview exercice by SalesLoft company.
 
-## Introduction
 Welcome to my data analyst portfolio! I'm a junior data analyst committed to mastering SQL through hands-on practice and real-world job interview exercises. In this portfolio, you'll discover a collection of projects showcasing my analytical skills and my dedication to continuous learning. Each project represents a step forward in my journey to excel in the field of data analysis. Join me as I demonstrate my passion for learning by doing, including this project, which is a job interview exercise by Salesloft company.
 
 There is 4 CSV files to complete this exercice : [CsvFiles](data)
 
-### Question 1
+## Question 1
 
 Data Integrity & Cleanup
 
@@ -25,7 +23,7 @@ Alphabetically list all the country codes in the continent map table that appear
 	when country_code = 'N/A' then '1'
 	else country_code end asc;
 
-### Question 2 :
+## Question 2 :
 
 List the Top 10 Countries by year over year % GDP per capita growth between 2011 & 2012.
 
@@ -68,7 +66,7 @@ List the Top 10 Countries by year over year % GDP per capita growth between 2011
                         where year = 2012
 
 
-### Question 3:
+## Question 3:
 
 For the year 2012, compare the percentage share of GDP Per Capita for the following regions: North America (NA), Europe (EU), and the Rest of the World. Your result should look something like:
 North America  | Europe | Rest of the World
@@ -105,7 +103,7 @@ X%  | Y%  | Z%
         where year = 2012 and continent_name<> 'Europe' and continent_name<> 'North America'
         ) as rest_of_the_world
 
-### Question 4 :
+## Question 4 :
 
 For years 2004 through 2012, calculate the average GDP Per Capita for every continent for every year. The average in this case is defined as the `Sum of GDP Per Capita for All Countries in the Continent / Number of Countries in the Continent`
 
@@ -124,7 +122,7 @@ For years 2004 through 2012, calculate the average GDP Per Capita for every cont
         group by continent_name, year
         order by year;
 
-### Question 5 :
+## Question 5 :
 For years 2004 through 2012, calculate the median GDP Per Capita for every continent for every year. The median in this  case is defined as `The value at which half of the samples for a continent are higher and half are lower`
 The final product should include columns for:
 - Year
