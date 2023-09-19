@@ -76,3 +76,31 @@ North America  | Europe | Rest of the World
 North America  | Europe | Rest of the World
  ------ | ------ | -------------
 X%  | Y%  | Z%
+
+`Solution`:
+
+    
+        select 
+        format(round((NA/(RW+EU+NA)),4),'p') as 'NORTH AMERICA', 
+        format(round((EU/(RW+EU+NA)),4),'P') as 'EUROPE', 
+        format(round((RW/(RW+EU+NA)),4),'P') as 'REST OF THE WORLD'
+        from(
+        select avg(gdp_per_capita) as NA
+
+        from per_capita
+        left join continent_map on continent_map.country_code = per_capita.country_code
+        left join continents on continents.continent_code = continent_map.continent_code
+        where year = 2012 and continent_name='North America') as North_america,
+        (
+        select avg(gdp_per_capita) as EU
+        from per_capita
+        left join continent_map on continent_map.country_code = per_capita.country_code
+        left join continents on continents.continent_code = continent_map.continent_code
+        where year = 2012 and continent_name='Europe') as Europe,
+        (
+        select avg(gdp_per_capita) as RW
+        from per_capita
+        left join continent_map on continent_map.country_code = per_capita.country_code
+        left join continents on continents.continent_code = continent_map.continent_code
+        where year = 2012 and continent_name<> 'Europe' and continent_name<> 'North America'
+        ) as rest_of_the_world
