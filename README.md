@@ -30,13 +30,13 @@ Alphabetically list all the country codes in the continent map table that appear
 List the Top 10 Countries by year over year % GDP per capita growth between 2011 & 2012.
 
  % year over year growth is defined as `(GDP Per Capita in 2012  -  GDP Per Capita in 2011)  /  (GDP Per Capita in 2011)`
+ The final product should include columns for:
+- Rank
+- Country Name
+- Country Code
+- Continent
+- Growth Percent
 
-    The final product should include columns for:
-    - Rank
-    - Country Name
-    - Country Code
-    - Continent
-    - Growth Percent
 
 `Solution`:
 
