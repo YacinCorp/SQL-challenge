@@ -130,3 +130,17 @@ The final product should include columns for:
 - Year
 - Continent
 - Median GDP Per Capita
+
+`Solution`:
+
+    select distinct continent_name,year,
+		PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY gdp_per_capita)   
+                            OVER (PARTITION BY continent_name,year) AS 'Median GDP Per Capita' 
+							
+							
+		from per_capita as capita 
+
+		inner join continent_map as map on map.country_code = capita.country_code
+		inner join continents on continents.continent_code= map.continent_code
+
+		order by  continent_name,year asc;
