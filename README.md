@@ -14,9 +14,9 @@ Alphabetically list all the country codes in the continent map table that appear
 
 Solution :
 
-update continent_map set country_code='N/A' where country_code=''
-select * from continent_map
-where country_code in (select country_code
+    update continent_map set country_code='N/A' where country_code=''
+    select * from continent_map
+    where country_code in (select country_code
 							from continent_map
 							group by country_code
 							having count(country_code) >1)
