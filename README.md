@@ -12,7 +12,7 @@ Data Integrity & Cleanup
 
 Alphabetically list all the country codes in the continent map table that appear more than once. For countries with no country code make them display as "N/A" and display them first in the list.
 
-Solution :
+`Solution` :
 
     update continent_map set country_code='N/A' where country_code=''
     select * from continent_map
@@ -25,5 +25,45 @@ Solution :
 		when country_code = 'N/A' then '1'
 		else country_code end asc;
 
+### Question 2 :
 
+List the Top 10 Countries by year over year % GDP per capita growth between 2011 & 2012.
+
+ % year over year growth is defined as `(GDP Per Capita in 2012  -  GDP Per Capita in 2011)  /  (GDP Per Capita in 2011)`
+
+    The final product should include columns for:
+    - Rank
+    - Country Name
+    - Country Code
+    - Continent
+    - Growth Percent
+
+`Solution`:
+
+    
+                SELECT top 10
+                RANK() OVER (ORDER BY growth_percentage DESC ) AS rank,
+            country_name,
+            country_code,
+            continent_name as continent,
+            growth_percentage,
+            year
+            from(
+            select 
+            countries.country_code,
+            gdp_per_capita,
+            continent_name,
+            country_name,
+            year,
+            
+            round(((gdp_per_capita/(LAG(gdp_per_capita, 1) OVER (ORDER BY per_capita.country_code, year)))-1)*100,4) as growth_percentage
+
+
+            from per_capita
+                left join countries on countries.country_code = per_capita.country_code
+                left join continent_map on continent_map.country_code = per_capita.country_code
+                left join continents on continents.continent_code = continent_map.continent_code
+                where year in(2011,2012)
+                ) as growth_formula
+                where year = 2012
 
