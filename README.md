@@ -73,6 +73,6 @@ List the Top 10 Countries by year over year % GDP per capita growth between 2011
 For the year 2012, compare the percentage share of GDP Per Capita for the following regions: North America (NA), Europe (EU), and the Rest of the World. Your result should look something like:
 North America  | Europe | Rest of the World
 
-North America  | Europe | Rest of the World
+    North America  | Europe | Rest of the World
     ------ | ------ | -------------
     X%  | Y%  | Z%
