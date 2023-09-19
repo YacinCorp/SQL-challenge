@@ -12,7 +12,7 @@ Data Integrity & Cleanup
 
 Alphabetically list all the country codes in the continent map table that appear more than once. For countries with no country code make them display as "N/A" and display them first in the list.
 
-`Solution` :
+`Solution:`
 
     update continent_map set country_code='N/A' where country_code=''
     select * from continent_map
@@ -38,7 +38,7 @@ List the Top 10 Countries by year over year % GDP per capita growth between 2011
 - Growth Percent
 
 
-`Solution`:
+`Solution:`
 
     
                 SELECT top 10
@@ -77,7 +77,7 @@ North America  | Europe | Rest of the World
  ------ | ------ | -------------
 X%  | Y%  | Z%
 
-`Solution`:
+`Solution:`
 
     
         select 
@@ -114,7 +114,7 @@ For years 2004 through 2012, calculate the average GDP Per Capita for every cont
 - Continent
 - Average GDP Per Capita
 
-`Solution`:
+`Solution:`
 
         select 
         avg(gdp_per_capita) as 'Average GDP Per Capita',continent_name as continent,year
@@ -131,7 +131,7 @@ The final product should include columns for:
 - Continent
 - Median GDP Per Capita
 
-`Solution`:
+`Solution:`
 
     select distinct continent_name,year,
 		PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY gdp_per_capita)   
