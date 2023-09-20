@@ -13,6 +13,6 @@ Shares of GDP Per Capita :
 Average GDP Per Capita for every continent through for years 2004 through 2012:
 ![PowerBI-Q4](PowerBI-Q4.png)
 
-### Question 4  :
+### Question 5  :
  Median GDP Per Capita for every continent through for years 2004 through 2012:
  ![PowerBI-Q5](PowerBI-Q5.png)
