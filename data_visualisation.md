@@ -8,5 +8,4 @@ Visualize the results of the questions 3, 4 & 5 from the SQL exercise.
 ### Question 3 visualisation :
 Shares of GDP Per Capita :
 
-
-[embed]Q3.pdf[/embed]
+[pb](Q3.png)
