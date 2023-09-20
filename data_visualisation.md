@@ -5,7 +5,10 @@ This project builds upon the SQL Challenge, where I convert raw data obtained fr
 ## Instruction :
 Visualize the results of the questions 3, 4 & 5 from the SQL exercise.
 
-### Question 3 visualisation :
+### Question 3  :
 Shares of GDP Per Capita :
 
 ![Q3](Q3.png)
+### Question 4 :
+Average GDP Per Capita for every continent for every year
+![PowerBI-Q4](PowerBI-Q4.png)
