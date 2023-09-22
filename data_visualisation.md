@@ -9,6 +9,7 @@ Visualize the results of the questions 3, 4 & 5 from the SQL exercise.
 
 
 ![Q3](Q3.png)
+
 ### Question 4 : Average GDP Per Capita for every continent through for years 2004 through 2012:
 
 
