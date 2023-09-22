@@ -18,3 +18,7 @@ Visualize the results of the questions 3, 4 & 5 from the SQL exercise.
  
  
  ![PowerBI-Q5](PowerBI-Q5.png)
+
+
+ ### Data Visualisation in Power BI format :
+ [sql-visualisation](SQL_Data_Visualisation.pbix)
